@@ -1,0 +1,80 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using  UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+public class count : MonoBehaviour
+{
+	
+ 
+ 				 
+	public Text t1;
+		
+	public Text t2;
+
+	
+      public Text t3;
+	
+	public Text t4;
+	
+	
+ 
+
+   
+   	   public GameObject Panel;
+
+
+	
+    public int countTo =0; 
+	public int count1 ;
+	
+    public int count2 ;
+	
+   public int count3 ;
+
+	
+   void Start()
+    {
+     }
+	
+	
+     void Update()
+    { 
+	
+	count1 =int.Parse(t1.text);
+    count2 =int.Parse(t2.text);
+	 count3 =int.Parse(t3.text);
+
+	countTo =count1 + count2 + count3;
+	  
+      string str1 = countTo.ToString();
+	   
+	    Debug.Log(str1);
+
+		    t4.text=str1;
+			 
+  
+	 if(countTo==3){
+			 
+		Panel.SetActive(true); 
+		 
+ 
+		 
+		
+		
+			
+	 }			 
+		 
+	 
+     	 
+	 
+      
+    }
+ 
+}

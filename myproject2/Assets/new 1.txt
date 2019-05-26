@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using  UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+public class dragimg : MonoBehaviour, IDragHandler , IBeginDragHandler, IEndDragHandler
+{
+	
+	 
+ 
+
+   private Image image;
+   public Text t;
+    public int count =0; 
+	
+ 
+
+
+
+	private void Awake()
+	{
+		image=GetComponent<Image>();
+		 
+
+		
+		     
+ 	}
+   public void OnBeginDrag(PointerEventData eventData)
+   {
+	   image.color=Color.green;
+
+   }
+   public void OnDrag(PointerEventData eventData)
+   {
+	   transform.position=eventData.position;
+	   
+	   
+   }
+   public void OnEndDrag(PointerEventData eventData)
+   {
+	   image.color=Color.white;
+	    
+		count++;
+		
+ 		
+				
+		string str1 = count.ToString();
+
+		   // string str1 = Integer.toString(count); 
+		   
+
+		     t.text=str1;
+	   
+	          
+	        
+		}	
+   }
+    
+   
+   
+
